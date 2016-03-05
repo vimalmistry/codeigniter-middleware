@@ -1,4 +1,4 @@
-## Codeigniter Middlewares
+# Codeigniter Middlewares
 
 This library enables you to quickly add any middleware to your codeigniter application and in too few lines you get everything up and running smoothly.
 Tested on CodeIgniter 3.0.4, should work on 2.2+ as well
@@ -16,17 +16,6 @@ Tested on CodeIgniter 3.0.4, should work on 2.2+ as well
 * Create new **middlewares** directory in application if not exists.
 
 ##### Create your class in application/middlewares
->
-> Class name require **Middleware** as suffix, also cannot contain, underscores or hyphens
-> Here is list of some valid conventions:
->
-
-* admin => AdminMiddleware
-* Admin => AdminMiddleware
-* SomeThing => SomeThingMiddleware
-* some_lazy_name => SomeLazyNameMiddleware
-* some_OtHer_Crazy_name => SomeOtHerCrazyNameMiddleware
-* hell_Yeah => HellYeahMiddleware
 
 ```php
 <?php
@@ -124,3 +113,22 @@ class Home extends MY_Controller
     }
 }
 ```
+
+#### Notes:
+
+>
+> Class name require **Middleware** as suffix, also cannot contain, underscores or hyphens
+> Here is list of some valid conventions:
+>
+
+* admin => AdminMiddleware
+* Admin => AdminMiddleware
+* SomeThing => SomeThingMiddleware
+* some_lazy_name => SomeLazyNameMiddleware
+* some_OtHer_Crazy_name => SomeOtHerCrazyNameMiddleware
+* hell_Yeah => HellYeahMiddleware
+
+On the left side is name of middleware, and on the right side is class name and .php filename for the class.
+Above list explains, how your middleware name would resolve to a class name.
+
+That's all, I hope documentation and code was helpful. Cheers!
