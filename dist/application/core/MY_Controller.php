@@ -16,10 +16,16 @@ class MY_Controller extends CI_Controller
     protected function middleware(){
         return array();
     }
+    
+    protected function globalMiddlware() {
+        return [];
+    }
+
 
     protected function _run_middlewares(){
         $this->load->helper('inflector');
-        $middlewares = $this->middleware();
+                $middlewares = array_merge($this->globalMiddlware(), $this->middleware());
+
         foreach($middlewares as $middleware){
             $middlewareArray = explode('|', str_replace(' ', '', $middleware));
             $middlewareName = $middlewareArray[0];
